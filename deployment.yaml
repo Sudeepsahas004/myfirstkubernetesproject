@@ -1,21 +1,20 @@
-## Kubernetes Configuration
 
-Kubernetes manifests used to deploy and expose the application on Azure Kubernetes Service (AKS).
-
-### Deployment Manifest
-
-File: [`deployment.yaml`](deployment.yaml)
-
-- Creates two application replicas.
-- Pulls the Docker image from Azure Container Registry.
-- Runs the application on container port 8080.
-
-### Service Manifest
-
-File: [`service.yaml`](service.yaml)
-
-- Uses Kubernetes LoadBalancer Service.
-- Exposes the application on port 80.
-- Forwards traffic to container port 8080.
-
-###
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsportal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devopsportal
+  template:
+    metadata:
+      labels:
+        app: devopsportal
+    spec:
+      containers:
+        - name: devopsportal
+          image: sahasacr.azurecr.io/myfirstkubernetesprojectimg:latest
+          ports:
+            - containerPort: 8080
