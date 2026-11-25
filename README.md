@@ -21,7 +21,7 @@ This project demonstrates how to build, containerize, and deploy an ASP.NET Core
 
 Azure Repos → Azure DevOps Pipeline → Docker Build → ACR → AKS → Kubernetes Pods → LoadBalancer
 
-## Architecture
+## Architecture - Diagram
 
 <p align="center">
   <img src="docs/architecture.png" alt="DevOpsPortal Azure Architecture" width="900"/>
