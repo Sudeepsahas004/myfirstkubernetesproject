@@ -50,6 +50,29 @@ Developed a DevOps learning portal using ASP.NET Core .NET 9.
 - Configured two application replicas.
 - Exposed the application using a LoadBalancer Service.
 
+  ## Kubernetes Configuration
+  
+  Kubernetes manifests used to deploy and expose the application on Azure Kubernetes Service (AKS).
+
+  ### Deployment Manifest
+  
+  File: [`deployment.yaml`](deployment.yaml)
+  
+  - Creates two application replicas.
+  - Pulls the Docker image from Azure Container Registry.
+  - Runs the application on container port 8080.
+  
+  ### Service Manifest
+  
+  File: [`service.yaml`](service.yaml)
+  
+  - Uses Kubernetes LoadBalancer Service.
+  - Exposes the application on port 80.
+  - Forwards traffic to container port 8080.
+  
+  ###
+
+
 ## Project Outcomes
 
 - Automated Docker image creation and publishing.
